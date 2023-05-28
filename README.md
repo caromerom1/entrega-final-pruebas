@@ -70,3 +70,6 @@ Con el comando anterior se ejecutará un servidor desde el que se puede acceder 
 
 Para ver el informe, se selecciona uno de los puntos del grafo que se observa y puede observarse a detalle cada punto del grafo
 
+## Manual
+
+Para observar los resultados de las pruebas manuales, acceder al siguiente [link](/manual) o ingresar a la carpeta del repositorio `manual`
