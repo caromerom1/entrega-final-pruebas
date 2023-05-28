@@ -4,7 +4,9 @@
   "description": "",
   "scripts": {
     "cypress:open": "cypress open",
-    "dataValidationTests": "npm run cypress:open -- --project dataValidation"
+    "dataValidationTests": "npm run cypress:open -- --project dataValidation",
+    "vrtTests": "npm run cypress:open -- --project vrt",
+    "resemble:run": "node vrt/cypress/resembleJS/index.js"
   },
   "repository": {
     "type": "git",
