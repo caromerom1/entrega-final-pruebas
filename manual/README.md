@@ -35,3 +35,4 @@ El objetivo de esta funcionalidad es que el usuario pueda cambiar información c
 
 # Resultados pruebas manuales
 
+[Inventario pruebas exploratorias.xlsx](https://github.com/caromerom1/entrega-final-pruebas/files/11584870/Inventario.pruebas.exploratorias.xlsx)
