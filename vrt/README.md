@@ -6,4 +6,3 @@
 ## Las herramientas utilizadas para el desarrollo de las pruebas E2E fueron:
 
 ### [Cypress](/cypress)
-### [Kraken](/kraken)
