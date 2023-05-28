@@ -2,7 +2,13 @@
 require('cypress-plugin-tab')
 var fs = require('fs')
 
-const url = Cypress.config('baseUrl') || "https://uniandes.edu.co/"
+const url = Cypress.config('baseUrl') || "http://localhost:2368/ghost/#/dashboard"
+const urlsToTest = [
+  "http://localhost:2368/ghost/#/dashboard",
+  "http://localhost:2368/ghost/#/site",
+  "http://localhost:2368/ghost/#/pages",
+  "http://localhost:2368/ghost/#/posts",
+];
 const appName = Cypress.env('appName')|| "your app"
 const events = Cypress.env('events')|| 100
 const delay = Cypress.env('delay') || 100
@@ -545,12 +551,41 @@ describe( `${appName} under monkeys`, function() {
                 curPageMaxY = Math.max( d.body.scrollHeight, d.body.offsetHeight, d.documentElement.clientHeight, d.documentElement.scrollHeight, d.documentElement.offsetHeight) - win.innerHeight
                 curPageMaxX = Math.max( d.body.scrollWidth, d.body.offsetWidth, d.documentElement.clientWidth, d.documentElement.scrollWidth, d.documentElement.offsetWidth) - win.innerWidth
             })
-            cy.wait(1000)
-            //Add an event for each type of event in order to enter the else statement of randomEvent method
-            for(let i = 0; i < events + 5; i++){
-                evtIndex++
-                randomEvent()
-            }
+            cy.wait(5000)
+
+      cy.get("input[name='identification']").type("test@test.com");
+      cy.get("input[name='password']").type("Sec.ure@Pas.sw0rd*158");
+      cy.get("button.login").click();
+      cy.wait(5000);
+
+      urlsToTest.forEach((url) => {
+        cy.visit(url).then((win) => {
+          let d = win.document;
+          curPageMaxY =
+            Math.max(
+              d.body.scrollHeight,
+              d.body.offsetHeight,
+              d.documentElement.clientHeight,
+              d.documentElement.scrollHeight,
+              d.documentElement.offsetHeight
+            ) - win.innerHeight;
+          curPageMaxX =
+            Math.max(
+              d.body.scrollWidth,
+              d.body.offsetWidth,
+              d.documentElement.clientWidth,
+              d.documentElement.scrollWidth,
+              d.documentElement.offsetWidth
+            ) - win.innerWidth;
+        });
+
+        cy.wait(5000);
+
+        for (let i = 0; i < events + 5; i++) {
+          evtIndex++;
+          randomEvent();
+        }
+      });
         }
         else cy.task('logPctNo100')
        

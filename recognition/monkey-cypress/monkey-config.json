@@ -1,13 +1,12 @@
 {
     "projectId":"TSDL-Monkey-with-cypress",
-    "baseUrl":"https://consumer.huawei.com/co/",
+    "baseUrl":"http://localhost:2368/ghost/#/signin",
     "env":{
-        "appName":"App prueba",
-        "events":50,
+        "appName":"Ghost",
+        "events":10,
         "delay":300,
         "seed":1234,
         "pctClicks":19,
-        "pctScroll":17,
         "pctSelectors":16,
         "pctKeys":16,
         "pctSpKeys":16,
